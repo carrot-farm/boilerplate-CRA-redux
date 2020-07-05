@@ -6,13 +6,16 @@ import { createRootSaga } from "../utils/reduxSagaUtils";
 import { createReducerManager } from "../utils/reduxUtils";
 import commonSagas from "./common/commonSagas";
 import commonReducers from "./common/commonReducers";
+import userSagas from "./user/userSagas";
+import userReducers from "./user/userReducers";
 
 // ===== rootSaga 생성
-const rootSaga = createRootSaga(commonSagas);
+const rootSaga = createRootSaga(commonSagas, userSagas);
 
 // ===== reducers
 const reducers = {
   common: commonReducers,
+  user: userReducers,
 };
 
 // ===== 스토어 생성
